@@ -9,6 +9,10 @@ define([
             type: 'openpos_pay_card',
             component: 'Zero1_OpenPosDefaultPayments/js/view/payment/method-renderer/card-method'
         },
+        {
+            type: 'openpos_pay_cash',
+            component: 'Zero1_OpenPosDefaultPayments/js/view/payment/method-renderer/cash-method'
+        }
     );
 
     return Component.extend({});

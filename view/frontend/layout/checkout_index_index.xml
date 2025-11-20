@@ -21,6 +21,9 @@
                                                                         <item name="openpos_pay_card" xsi:type="array">
                                                                             <item name="isBillingAddressRequired" xsi:type="boolean">false</item>
                                                                         </item>
+                                                                        <item name="openpos_pay_cash" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">false</item>
+                                                                        </item>
                                                                     </item>
                                                                 </item>
                                                             </item>

@@ -5,8 +5,14 @@
                 <active>1</active>
                 <model>Zero1\OpenPosDefaultPayments\Model\PaymentMethod\Card</model>
                 <order_status>processing</order_status>
-                <title>Amount on card</title>
+                <title>Offline card payment</title>
             </openpos_pay_card>
+            <openpos_pay_cash>
+                <active>1</active>
+                <model>Zero1\OpenPosDefaultPayments\Model\PaymentMethod\Cash</model>
+                <order_status>processing</order_status>
+                <title>Offline cash payment</title>
+            </openpos_pay_cash>
         </payment>
     </default>
 </config>
