@@ -10,11 +10,35 @@
         <!-- ko foreach: getRegion('messages') -->
         <!-- ko template: getTemplate() --><!-- /ko -->
         <!--/ko-->
+
+        <div class="field required">
+            <label data-bind="attr: {for: getCode() + '_tendered'}" class="label">
+                <span>Cash tendered: </span>
+            </label>
+            <div class="control">
+                <input type="number"
+                        class="input-text"
+                        data-bind="attr: {id: getCode() + '_tendered'}, value: cashTendered, valueUpdate: 'keyup'"/>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="field">
+            <label class="label">
+                <span>Change: </span>
+            </label>
+            <div class="control">
+                <span data-bind="text: getChangeAmount()"></span>
+            </div>
+        </div>
         <div class="checkout-agreements-block">
             <!-- ko foreach: $parent.getRegion('before-place-order') -->
                 <!-- ko template: getTemplate() --><!-- /ko -->
             <!--/ko-->
-        </div>
+            </div>
         <div class="actions-toolbar">
             <div class="primary">
                 <button class="action primary checkout"

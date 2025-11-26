@@ -16,12 +16,14 @@
                     <item name="label" xsi:type="string">Offline card payment</item>
                     <item name="module" xsi:type="string">Zero1_OpenPosDefaultPayments</item>
                     <item name="canUseForLayaways" xsi:type="boolean">true</item>
+                    <item name="canUseForRma" xsi:type="boolean">true</item>
                 </item>
                 <item name="openpos_pay_cash" xsi:type="array">
                     <item name="code" xsi:type="string">openpos_pay_cash</item>
                     <item name="label" xsi:type="string">Offline cash payment</item>
                     <item name="module" xsi:type="string">Zero1_OpenPosDefaultPayments</item>
                     <item name="canUseForLayaways" xsi:type="boolean">true</item>
+                    <item name="canUseForRma" xsi:type="boolean">true</item>
                 </item>
             </argument>
         </arguments>

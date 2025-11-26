@@ -37,6 +37,11 @@ class Cash extends \Magento\Payment\Model\Method\AbstractMethod
     protected $directory;
 
     /**
+     * @var string
+     */
+    protected $_infoBlockType = \Zero1\OpenPosDefaultPayments\Block\Adminhtml\Info\Cash::class;
+
+    /**
      * @var bool
      */
     protected $_isOffline = true;
@@ -88,6 +93,23 @@ class Cash extends \Magento\Payment\Model\Method\AbstractMethod
         $this->tillSessionManagement = $tillSessionManagement;
         $this->directory = $directory ?: ObjectManager::getInstance()->get(DirectoryHelper::class);
     }
+
+    /**
+     * @param \Magento\Framework\DataObject $data
+     * @return $this
+     */
+    public function assignData(\Magento\Framework\DataObject $data)
+    {
+        parent::assignData($data);
+
+        $additionalData = $data->getAdditionalData();
+        if (isset($additionalData['cash_tendered'])) {
+            $this->getInfoInstance()->setAdditionalInformation('cash_tendered', $additionalData['cash_tendered']);
+        }
+
+        return $this;
+    }
+
     /**
      * @param \Magento\Quote\Api\Data\CartInterface|null $quote
      * @return bool
