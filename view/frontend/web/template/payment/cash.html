@@ -11,29 +11,19 @@
         <!-- ko template: getTemplate() --><!-- /ko -->
         <!--/ko-->
 
-        <div class="field required">
+        <div class="cash-tendered">
             <label data-bind="attr: {for: getCode() + '_tendered'}" class="label">
                 <span>Cash tendered: </span>
             </label>
-            <div class="control">
-                <input type="number"
-                        class="input-text"
-                        data-bind="attr: {id: getCode() + '_tendered'}, value: cashTendered, valueUpdate: 'keyup'"/>
-            </div>
+            <input type="number"
+                class="input-text"
+                data-bind="attr: {id: getCode() + '_tendered'}, value: cashTendered, valueUpdate: 'keyup'"/>
         </div>
 
-        <br>
-        <br>
-        <br>
-
-        <div class="field">
-            <label class="label">
-                <span>Change: </span>
-            </label>
-            <div class="control">
-                <span data-bind="text: getChangeAmount()"></span>
-            </div>
+        <div class="change-due-wrapper">
+            <span>Change Due: </span><span class="amount-due" data-bind="text: getChangeAmount()"></span>
         </div>
+        
         <div class="checkout-agreements-block">
             <!-- ko foreach: $parent.getRegion('before-place-order') -->
                 <!-- ko template: getTemplate() --><!-- /ko -->
