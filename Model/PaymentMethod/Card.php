@@ -67,10 +67,10 @@ class Card extends \Magento\Payment\Model\Method\AbstractMethod
         \Magento\Payment\Model\Method\Logger $logger,
         OpenPosConfiguration $openPosConfiguration,
         TillSessionManagement $tillSessionManagement,
-        \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
-        \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
+        ?\Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
+        ?\Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
         array $data = [],
-        DirectoryHelper $directory = null
+        ?DirectoryHelper $directory = null
     ) {
         parent::__construct(
             $context,
@@ -92,7 +92,7 @@ class Card extends \Magento\Payment\Model\Method\AbstractMethod
      * @param \Magento\Quote\Api\Data\CartInterface|null $quote
      * @return bool
      */
-    public function isAvailable(\Magento\Quote\Api\Data\CartInterface $quote = null)
+    public function isAvailable(?\Magento\Quote\Api\Data\CartInterface $quote = null)
     {
         // Check if POS module is enabled
         if(!$this->openPosConfiguration->isEnabled()) {
