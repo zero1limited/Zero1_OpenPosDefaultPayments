@@ -1,13 +1,11 @@
 define([
-    'ko',
     'Magento_Checkout/js/view/payment/default',
     'Magento_Checkout/js/model/quote',
     'Magento_Catalog/js/price-utils'
-], function (ko, Component, quote, priceUtils) {
+], function (Component, quote, priceUtils) {
     'use strict';
 
     return Component.extend({
-        isPlaceOrderActionAllowed: ko.observable(true),
         defaults: {
             template: 'Zero1_OpenPosDefaultPayments/payment/cash',
             cashTendered: null
